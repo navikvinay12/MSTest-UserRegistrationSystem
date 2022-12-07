@@ -6,21 +6,20 @@ namespace RegexMSTest
     public class UserRegistrationTestClass
     {
         [TestMethod]
-        [DataRow("Abc")]    //pass
-        [DataRow("Abcd")]   //pass
-        [DataRow("Ab")]     //fail
-        [DataRow("abc")]    //fail
+        [DataRow("abc@bl.com")]    //pass
+        [DataRow("abc.xyz@bl.co.in")]   //pass
+        [DataRow("abc123@gmail.a")]     //fail
+        [DataRow("abc.@gmail.com")]    //fail
         public void TestFirstName(string userInput)
         {
             //Arrange
             //string userInput = "Abc";
 
             //Act
-            bool output = UserDetails.LastName(userInput);      //UC2 LastName starts with cap and has min 3 char.
+            bool output = UserDetails.EmailId(userInput);      //UC3 Email ID testing .
 
             //Assert
             Assert.AreEqual(output, true);
-
         }
     }
 }
