@@ -6,17 +6,17 @@ namespace RegexMSTest
     public class UserRegistrationTestClass
     {
         [TestMethod]
-        [DataRow("Abc45678")]    //pass
-        [DataRow("Abcd567890")]   //pass
-        [DataRow("a2345678")]     //fail
-        [DataRow("Abc123")]    //fail
+        [DataRow("Abc@45678")]    //pass
+        [DataRow("Abc#567890")]   //pass
+        [DataRow("Aa%@5678")]     
+        [DataRow("@!@!Abc123")]    
         public void TestFirstName(string userInput)
         {
             //Arrange
             //string userInput = "Abc";
 
             //Act
-            bool output = UserDetails.UpperCase1AndNumeric1(userInput);      //UC7 min 8 char ,1 upper case ,i numeric.
+            bool output = UserDetails.SpecialCharacter1(userInput);      //UC8 min 8 char , exactly 1 special char 
 
             //Assert
             Assert.AreEqual(output, true);
