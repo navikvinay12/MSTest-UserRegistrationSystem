@@ -8,7 +8,7 @@ namespace RegexMSTest
         [TestMethod]
         [DataRow("Abc45678")]    //pass
         [DataRow("Abcd567890")]   //pass
-        [DataRow("1234567")]     //fail
+        [DataRow("a2345678")]     //fail
         [DataRow("Abc123")]    //fail
         public void TestFirstName(string userInput)
         {
@@ -16,7 +16,7 @@ namespace RegexMSTest
             //string userInput = "Abc";
 
             //Act
-            bool output = UserDetails.PassMin8Char(userInput);      //UC5 pass min 8 char..
+            bool output = UserDetails.PassMin8CharAnd1UpperCase(userInput);      //UC5 pass min 8 char and 1 uppercase
 
             //Assert
             Assert.AreEqual(output, true);
