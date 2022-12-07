@@ -6,7 +6,7 @@
         {
             Console.WriteLine("User Registration using Regex.\n");
             string userInput = "Abc";
-            UserDetails.FirstName(userInput);
+            UserDetails.LastName(userInput);
         }
     }
 }
